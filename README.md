@@ -1,4 +1,4 @@
-# Dillinger
+# Decrypto
 ### _Simple solution to decrypt any cipher_
 
 ## Introduction
