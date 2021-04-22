@@ -1,29 +1,10 @@
-# import cipher
-class atbash():
+class Atbash:
 
-    def __init__(self):
-        # super().__init__(name="Atbash", has_key=0)
-        # This script uses dictionaries to lookup various alphabets
-        _lookup_table = {'A': 'Z', 'B': 'Y', 'C': 'X', 'D': 'W', 'E': 'V',
-                         'F': 'U', 'G': 'T', 'H': 'S', 'I': 'R', 'J': 'Q',
-                         'K': 'P', 'L': 'O', 'M': 'N', 'N': 'M', 'O': 'L',
-                         'P': 'K', 'Q': 'J', 'R': 'I', 'S': 'H', 'T': 'G',
-                         'U': 'F', 'V': 'E', 'W': 'D', 'X': 'C', 'Y': 'B', 'Z': 'A'}
-
-    def decrypt(self, message):
-        _lookup_table = {'A': 'Z', 'B': 'Y', 'C': 'X', 'D': 'W', 'E': 'V',
-                         'F': 'U', 'G': 'T', 'H': 'S', 'I': 'R', 'J': 'Q',
-                         'K': 'P', 'L': 'O', 'M': 'N', 'N': 'M', 'O': 'L',
-                         'P': 'K', 'Q': 'J', 'R': 'I', 'S': 'H', 'T': 'G',
-                         'U': 'F', 'V': 'E', 'W': 'D', 'X': 'C', 'Y': 'B', 'Z': 'A'}
-        cipher = ''
-        for letter in message:
-            # checks for space
-            if(letter != ' '):
-                # adds the corresponding letter from the lookup_table
-                cipher += _lookup_table[letter]
-            else:
-                # adds space
-                cipher += ' '
-
-        return cipher
+    def decrypt(message):
+        message = message.lower()
+        ans = ""
+        alphabet = u"abcdefghijklmnopqrstuvwxyz"
+        for char in message:
+            alphIndex = len(alphabet) - (alphabet.index(char)) - 1
+            ans += alphabet[alphIndex]
+        return ans
