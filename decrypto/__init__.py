@@ -11,11 +11,12 @@ def home():
 
 @app.route("/submit", methods=['GET'])
 def submit():
-    if request.method == 'GET':        
+    if request.method == 'GET':
         message = request.args.get('cipher')
-        s = Cipher(message)        
+        s = Cipher(message)
         data = s.decrypt()
     return data
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)

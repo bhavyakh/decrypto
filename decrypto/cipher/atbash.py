@@ -1,7 +1,7 @@
 class Atbash:
 
     @classmethod
-    def decrypt(cls, message, key = None):
+    def decrypt(cls, message, key=None):
         message = message.lower()
         ans = ""
         alphabet = u"abcdefghijklmnopqrstuvwxyz"
@@ -10,4 +10,4 @@ class Atbash:
             if char.isalpha():
                 alphIndex = len(alphabet) - (alphabet.index(char)) - 1
                 ans += alphabet[alphIndex]
-        return {"Atbash" : ans}
+        return {"Atbash": ans}

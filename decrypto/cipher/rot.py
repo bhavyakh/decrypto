@@ -1,6 +1,6 @@
 class Rot:
 
-    def _decrypt(message, key = None):
+    def _decrypt(message, key=None):
         ans = ""
         key = 26 - key
         # traverse message
@@ -16,5 +16,5 @@ class Rot:
         data = {}
         # traverse message
         for i in range(1, 26):
-            data.update({ i : cls._decrypt(message, key=i) })
-        return {"Rot" : data}
+            data.update({i: cls._decrypt(message, key=i)})
+        return {"Rot": data}
