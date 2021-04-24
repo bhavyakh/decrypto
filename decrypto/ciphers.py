@@ -1,4 +1,4 @@
-from decrypto.cipher import (Atbash, Rot, RailFence, Basen, AsciiShift)
+from decrypto.cipher import (Atbash, Rot, RailFence, Basen, AsciiShift, Binary)
 import json
 from json2html import *
 
@@ -16,6 +16,8 @@ class Cipher():
             data.update(RailFence.decrypt(self.message))
             data.update(Basen.decrypt(self.message))
             data.update(AsciiShift.decrypt(self.message))
+            data.update(Binary.decrypt(self.message))
             print(data)
             e = json2html.convert(json=json.dumps(data))
+
             return e
