@@ -7,6 +7,7 @@ class Atbash:
         alphabet = u"abcdefghijklmnopqrstuvwxyz"
 
         for char in message:
-            alphIndex = len(alphabet) - (alphabet.index(char)) - 1
-            ans += alphabet[alphIndex]
+            if char.isalpha():
+                alphIndex = len(alphabet) - (alphabet.index(char)) - 1
+                ans += alphabet[alphIndex]
         return {"Atbash" : ans}
