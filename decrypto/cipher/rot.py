@@ -1,4 +1,4 @@
-class Caesar:
+class Rot:
 
     def _decrypt(message, key = None):
         ans = ""
@@ -17,4 +17,4 @@ class Caesar:
         # traverse message
         for i in range(1, 26):
             data.update({ i : cls._decrypt(message, key=i) })
-        return {"Caesar" : data}
+        return {"Rot" : data}

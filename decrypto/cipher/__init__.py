@@ -1,3 +1,3 @@
 from .atbash import Atbash
-from .caeser import Caesar
+from .rot import Rot
 from .railfence import RailFence
