@@ -6,3 +6,6 @@ from .ascii_shift import AsciiShift
 from .binary import Binary
 from .t9 import T9Text
 from .dtmf import DTMF
+from .periodic import Periodic
+from .prime import Prime
+from .a1z26 import A1Z26
