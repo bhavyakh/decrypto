@@ -9,3 +9,5 @@ from .dtmf import DTMF
 from .periodic import Periodic
 from .prime import Prime
 from .a1z26 import A1Z26
+from .vigenere import Vigenere
+from .vigenereBreaker import VigenereBreaker

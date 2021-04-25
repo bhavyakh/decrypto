@@ -13,8 +13,9 @@ def home():
 def submit():
     if request.method == 'GET':
         message = request.args.get('cipher')
-        s = Cipher(message)
-        data = s.decrypt()
+        key = request.args.get('key')
+        s = Cipher(message, key)
+        data = s.decrypt(cipher, key)
     return data
 
 
