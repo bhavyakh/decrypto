@@ -13,6 +13,7 @@ class Rot:
     @classmethod
     def decrypt(cls, message):
         message = message.lower()
+        message = message.replace(" ", "")
         data = {}
         # traverse message
         for i in range(1, 26):
