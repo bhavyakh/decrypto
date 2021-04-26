@@ -2,7 +2,6 @@ from decrypto.cipher import (
     Atbash, Rot, RailFence, Basen, AsciiShift, Binary, T9Text, DTMF, Periodic, Prime, A1Z26, Vigenere, VigenereBreaker)
 from decrypto.cipher.detectEnglish import isEnglish
 import json
-
 from json2html import *
 
 
@@ -12,6 +11,8 @@ class Cipher():
         self.message = message
         self.key = key
         self.category = 1
+
+        # List of all ciphers functions
         self.list = {
             "alpha_nonkeyed": {
                 "AtBash": Atbash.decrypt,
@@ -37,13 +38,10 @@ class Cipher():
                 "Viginere Breaker": VigenereBreaker.decrypt
             }
         }
-        '''if self.key:
-            self.category = 3
-        else:
-            self.category = 1'''
         # TODO: Bacon, keyboard
 
     def decrypt(self, message, key):
+        # Categories of defined ciphers
         _category = ['alpha_nonkeyed', 'alphanumeric-nonkeyed',
                      'numeric-nonkeyed', 'alpha_keyed', 'alpha_keyed_unknown']
 
@@ -57,6 +55,8 @@ class Cipher():
         e = json2html.convert(json=json.dumps(data))
 
         return e
+
+    # Checks if the solved cipher is an english sentence for better results
 
     def _toenglish(self, data, carrier=""):
         print(data)
