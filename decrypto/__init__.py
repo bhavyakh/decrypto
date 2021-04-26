@@ -17,7 +17,3 @@ def submit():
         s = Cipher(message, key)
         data = s.decrypt(cipher, key)
     return data
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=8080)

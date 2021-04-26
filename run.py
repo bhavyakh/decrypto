@@ -4,4 +4,4 @@ from decrypto import app
 # TODO : Add env vars
 # TODO : Call create_app function
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=1234)
