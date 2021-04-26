@@ -9,6 +9,7 @@ Decrypto is s a simple tool to decrypt popular ciphers for users finding it diff
 ```sh
 python run.py
 ```
+![image](decrypto/static/decrypto_logo.png)
 
 ## LICENSE
 
