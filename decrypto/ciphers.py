@@ -2,6 +2,7 @@ from decrypto.cipher import (
     Atbash, Rot, RailFence, Basen, AsciiShift, Binary, T9Text, DTMF, Periodic, Prime, A1Z26, Vigenere, VigenereBreaker)
 from decrypto.cipher.detectEnglish import isEnglish
 import json
+
 from json2html import *
 
 
