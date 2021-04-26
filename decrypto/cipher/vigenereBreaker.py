@@ -20,8 +20,19 @@ class VigenereBreaker:
 
     @ classmethod
     def decrypt(cls, message):
-        # try:
-        data = cls._hackVigenere(message)
-        '''except:
-            data = "N/A"'''
+        """Decrypts Vigenere cipher without key
+        Uses dictionary attack on each key to get 
+        a sentence on which English words %age can
+        be tested
+        Args:
+            message (str): Encrypted text
+            key (str): Key
+
+        Returns:
+            dict : {"Vigenere" : [output]}
+        """
+        try:
+            data = cls._hackVigenere(message)
+        except:
+            data = "N/A"
         return {"Vigenere": data}

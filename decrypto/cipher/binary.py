@@ -5,11 +5,23 @@ class Binary:
 
     @classmethod
     def decrypt(cls, message, key=None):
-        ans = ""
+        """Converts from Binary to ASCII
+        Uses binascii library
+        More at:
+        https://en.wikipedia.org/wiki/Binary_number
+
+        Args:
+            message (str): encryted text
+
+        Returns:
+            dict: {"Binary" : [output]}
+        """
+        output = ""
+        # Whitespaces are irrelevant
         message = message.replace(" ", "")
         try:
             n = int(message, 2)
-            ans = binascii.unhexlify('%x' % n).decode("utf-8")
+            output = binascii.unhexlify('%x' % n).decode("utf-8")
         except:
-            ans = "N/A"
-        return {"Binary ": ans}
+            output = "N/A"
+        return {"Binary ": output}

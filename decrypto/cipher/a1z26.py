@@ -1,11 +1,12 @@
 class A1Z26:
-
+    # Protected:
     def _A1Z26_decrypt(cistring):
 
-        string = ""                     # Placeholder variable
-        data = cistring.split()         # Split string at " "
+        string = ""
+        # Split string at " "
+        data = cistring.split()
 
-        for char in data:               # Loop through each character
+        for char in data:
             if(ord(char) > ord('z')):
                 raise ValueError("Larger than 26")
                 break
@@ -13,12 +14,23 @@ class A1Z26:
             string += char
         return(string)
 
+    # Public:
     @classmethod
     def decrypt(cls, message):
+        """Decrypts A1Z26 Cypher :  
+        A corresponds to 1, B to 2 ... Z to 26
+        More at:
+        https://www.dcode.fr/letter-number-cipher
 
+        Args:
+            message (str): encrypted text
+
+        Returns:
+            dict: {"A1Z26" : [output]}
+        """
         # Decrypt string by converting each number to a letter
         try:
-            string = cls._A1Z26_decrypt(message)
+            output = cls._A1Z26_decrypt(message)
         except:
-            string = "N/A"
-        return({"A1Z26": string})      # Return cipher dictionary
+            output = "N/A"
+        return({"A1Z26": output})      # Return cipher dictionary

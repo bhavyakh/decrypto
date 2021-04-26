@@ -20,6 +20,18 @@ class DTMF:
 
     @classmethod
     def decrypt(cls, message):
+        """Decrypts DTMF Cypher :  
+        Each numeral string represents a number
+        as given in _keys
+        More at:
+        https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling
+
+        Args:
+            message (str): encrypted text
+
+        Returns:
+            dict: {"DTMF" : [output]}
+        """
         try:
             dtmf = cls._dtmf(message)
         except:

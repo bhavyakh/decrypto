@@ -21,6 +21,18 @@ class T9Text:
 
     @classmethod
     def decrypt(cls, message):
+        """Decrypts T9 Cypher :  
+        Each numeral corresponds to letters as in 
+        T9 keypad
+        More at:
+        https://en.wikipedia.org/wiki/T9_(predictive_text)
+
+        Args:
+            message (str): encrypted text
+
+        Returns:
+            dict: {"T9" : [output]}
+        """
         try:
             t9 = cls._make_text(message)
         except:

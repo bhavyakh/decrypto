@@ -1,6 +1,8 @@
 from decrypto.cipher import (
     Atbash, Rot, RailFence, Basen, AsciiShift, Binary, T9Text, DTMF, Periodic, Prime, A1Z26, Vigenere, VigenereBreaker)
+from decrypto.cipher.detectEnglish import isEnglish
 import json
+
 from json2html import *
 
 
@@ -34,7 +36,6 @@ class Cipher():
             "alpha_keyed_unknown": {
                 "Viginere Breaker": VigenereBreaker.decrypt
             }
-
         }
         '''if self.key:
             self.category = 3
@@ -46,30 +47,25 @@ class Cipher():
         _category = ['alpha_nonkeyed', 'alphanumeric-nonkeyed',
                      'numeric-nonkeyed', 'alpha_keyed', 'alpha_keyed_unknown']
 
-        """data = Atbash.decrypt(self.message)
-            data.update(Rot.decrypt(self.message))
-            data.update(RailFence.decrypt(self.message))
-            data.update(Basen.decrypt(self.message))
-            data.update(AsciiShift.decrypt(self.message))"""
-        '''data = T9Text.decrypt(self.message)
-            data.update(DTMF.decrypt(self.message))
-            data.update(Binary.decrypt(self.message))
-            data.update(Periodic.decrypt(self.message))
-            data.update(Prime.decrypt(self.message))
-            data.update(A1Z26.decrypt(self.message))
-            e = json2html.convert(json=json.dumps(data))
-            data = Vigenere.decrypt(self.message, self.key)
-            e = json2html.convert(json=json.dumps(data))
-            data = VigenereBreaker.decrypt(self.message)
-            e = json2html.convert(json=json.dumps(data))'''
         data = {}
-        for key, value in self.list[_category[0]].items():
-            print(value)
+        for key, value in self.list[_category[1]].items():
 
             if not isinstance(value, dict):
-                print(value)
                 data.update(value(self.message))
 
+        data.update({"english": self._toenglish(data, carrier="")})
         e = json2html.convert(json=json.dumps(data))
 
         return e
+
+    def _toenglish(self, data, carrier=""):
+        print(data)
+        final = {}
+        for key, value in data.items():
+            if isinstance(value, dict):
+                self._toenglish(value, key)
+            else:
+                if isEnglish(value, wordPercentage=25):
+                    final.update({str(carrier) + " " + key: value})
+
+        return final

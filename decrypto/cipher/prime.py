@@ -111,6 +111,17 @@ class Prime:
 
     @classmethod
     def decrypt(cls, message):
+        """Decrypts Prime Indexing Cypher :  
+        Valid if every number present is a prime number
+        Indexed to the position of prime number
+        Dictionary Generator at https://pastebin.com/7wXNapM5
+
+        Args:
+            message (str): encrypted text
+
+        Returns:
+            dict: {"Prime indexing" : [output]}
+        """
         try:
             prime = cls._prime(message)
         except:

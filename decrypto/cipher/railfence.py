@@ -60,6 +60,17 @@ class RailFence:
 
     @classmethod
     def decrypt(cls, message):
+        """Decrypts Railfence Cypher :  
+        Encrypted as if letters are present on a rail
+        More at:
+        https://en.wikipedia.org/wiki/Rail_fence_cipher
+
+        Args:
+            message (str): encrypted text
+
+        Returns:
+            dict: {"railfence" : {1,2,3 : [output]}}
+        """
         message = message.lower()
         data = {}
         # traverse message
