@@ -1,5 +1,6 @@
 # Decrypto
 ### _Simple solution to decrypt any cipher_
+![image](decrypto/static/decrypto_logo.png)
 
 ## Introduction
 Decrypto is s a simple tool to decrypt popular ciphers for users finding it difficult to analyse the cipher.
@@ -9,7 +10,6 @@ Decrypto is s a simple tool to decrypt popular ciphers for users finding it diff
 ```sh
 python run.py
 ```
-![image](decrypto/static/decrypto_logo.png)
 
 ## LICENSE
 
