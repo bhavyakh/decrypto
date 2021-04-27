@@ -60,7 +60,6 @@ class Cipher():
     # Checks if the solved cipher is an english sentence for better results
 
     def _toenglish(self, data, carrier=""):
-        print(data)
         final = {}
         for key, value in data.items():
             if isinstance(value, dict):
