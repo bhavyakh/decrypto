@@ -22,12 +22,12 @@ function isKeyPresent() {
 async function submitForm(e, form) {
     e.preventDefault();
 
-    // const btnSubmit = document.getElementById('btnSubmit');
-    // btnSubmit.disabled = true;
-    // setTimeout(() => btnSubmit.disabled = false, 2000);
+    const btnSubmit = document.getElementById('btnSubmit');
+    btnSubmit.disabled = true;
+    setTimeout(() => btnSubmit.disabled = false, 4000);
 
-    // var moda = document.getElementById("myModal")
-    // moda.modal("show");
+    var moda = document.getElementById("myModal")
+    moda.modal("show");
 
     const jsonFormData = buildJsonFormData(form);
     myJSON = JSON.stringify(jsonFormData);
