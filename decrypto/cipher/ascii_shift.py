@@ -12,7 +12,7 @@ class AsciiShift:
 
     # Public:
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts ASCII Shift
         Each charecter can be shifted be k ascii characters
         from 1 to 255

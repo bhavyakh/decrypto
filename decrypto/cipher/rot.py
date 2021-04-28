@@ -14,7 +14,7 @@ class Rot:
         return ans
 
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts ROT-N Cypher :  
         Each letter in the string is moved by N charcters
         More at:

@@ -20,7 +20,7 @@ class T9Text:
         return text
 
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts T9 Cypher :  
         Each numeral corresponds to letters as in 
         T9 keypad

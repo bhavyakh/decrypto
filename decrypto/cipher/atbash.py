@@ -2,7 +2,7 @@ class Atbash:
 
     # Public:
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts AtBash Cipher
         Each letter = 26 - [letter index]
         More at:

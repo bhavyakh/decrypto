@@ -16,7 +16,7 @@ class A1Z26:
 
     # Public:
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts A1Z26 Cypher :  
         A corresponds to 1, B to 2 ... Z to 26
         More at:

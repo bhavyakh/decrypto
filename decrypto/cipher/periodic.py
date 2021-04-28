@@ -12,7 +12,7 @@ class Periodic:
         return text
 
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts Periodic Cypher :  
         Each number corresponds to atomic number and
         symbol of an element which is converted into text

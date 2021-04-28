@@ -59,7 +59,7 @@ class RailFence:
         return("".join(result))
 
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts Railfence Cypher :  
         Encrypted as if letters are present on a rail
         More at:

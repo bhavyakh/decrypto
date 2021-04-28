@@ -110,7 +110,7 @@ class Prime:
         return text
 
     @classmethod
-    def decrypt(cls, message):
+    def decrypt(cls, message, key=None):
         """Decrypts Prime Indexing Cypher :  
         Valid if every number present is a prime number
         Indexed to the position of prime number
