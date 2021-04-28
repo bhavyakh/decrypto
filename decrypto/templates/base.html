@@ -11,7 +11,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" type="text/css" href="../static/main.css">
-
+    <header>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    </header>
     <title>Decrypto!</title>
 </head>
 
@@ -19,7 +21,7 @@
     <div class="container-contact100">
 
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form" action="/submit" method="get" id="form">
+            <form class="contact100-form validate-form" action="" method="POST" id="form">
                 <span class="contact100-form-title">
                     <img src="../static/logo_t.png" class="img-fluid" alt="Responsive image">
 
@@ -61,8 +63,69 @@
                     </button>
                 </div>
             </form>
+            <div class="wrap-contact100">
+                <br><br><br>
+                <div id="output" style="display: none;">
+
+
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th>Cipher </th>
+                                <th>Decrypted Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            <!-- <tr>
+                                <td>Row 1, Cell 1</td>
+                                <td>Row 1, Cell 2</td>
+                            </tr>
+                            <tr>
+                                <td>Row 2, Cell 1</td>
+                                <td>Row 2, Cell 2</td>
+                            </tr>
+                            <tr>
+                                <td>Row 3, Cell 1</td>
+                                <td>Row 3, Cell 2</td>
+                            </tr>
+                            <tr>
+                                <td>Row 4, Cell 1</td>
+                                <td>Row 4, Cell 2</td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                    <div class="container-contact100-form-btn">
+                        <button class="contact50-form-btn" id="all" data-toggle="modal" data-target="#exampleModalLong">
+                            <span>
+                                <b style="font-family: Ubuntu-Bold;" >Show all possible outputs</b>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal top" data-mdb-keyboard="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <!-- Modal content -->
+
+                <div class="modal-content">
+
+                    <span class="close">&times;</span>
+                    <pre id="allContent"></pre>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
 
     <!-- Bootstrap Bundle with Popper -->
