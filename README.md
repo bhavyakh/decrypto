@@ -52,7 +52,13 @@ flask run
 
 ![App Screenshot](decryto/../decrypto/static/screenshot.png)
 
-  
+## Testing 
+Tests can be performed with
+```sh
+python -m unittest
+```
+
+
 ## Future Changes
 - Use a more robust vigenere breaker tool. 
   - Detect key length with moving index and rotations using statistical techniques
