@@ -5,6 +5,7 @@
 Decrypto is a simple python based application to decrypt popular ciphers for users finding it difficult to analyse them.
 It uses multiple ciphers to decrypt an encrypted text and then look for English words to filter.
 
+Deployed at [decrypto-cipher.herokuapp.com](https://decrypto-cipher.herokuapp.com/)
 
 Currently the app is capable of solving 10+ most common ciphers. More to be implemented soon!
 
@@ -43,7 +44,7 @@ python app.py
 
 ## Examples
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](decryto/../decrypto/static/screenshot.png)
 
   
 
