@@ -26,7 +26,7 @@ def submit():
     key = returnedJSON['key']
     category = (_getCategory(returnedJSON))
     s = Cipher(message, category, key)
-    data = s.decrypt(cipher, key)
+    data = s.decrypt()
     # if request.method == 'GET':
     #     try:
     #         print(request)
@@ -42,7 +42,6 @@ def submit():
 def _getCategory(dic):
     category = 0
     # Vigenere break
-    print(dic)
     if (dic['break']):
         category = 4
     else:

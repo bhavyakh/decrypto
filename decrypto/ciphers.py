@@ -1,6 +1,6 @@
 from decrypto.cipher.detectEnglish import isEnglish
 import json
-from decrypto.cipher.list import cipherList
+from decrypto.list import cipherList
 from json2html import *
 
 
@@ -15,14 +15,13 @@ class Cipher():
         self.list = cipherList
         # TODO: Bacon, keyboard
 
-    def decrypt(self, message, key):
+    def decrypt(self):
         # Categories of defined ciphers
         _category = ['alpha_nonkeyed', 'alphanumeric-nonkeyed',
                      'numeric-nonkeyed', 'alpha_keyed', 'alpha_keyed_unknown']
-        input_key = key
+        input_key = self.key
         data = {}
         for key, value in self.list[_category[self.category]].items():
-            print(input_key)
             if not isinstance(value, dict):
                 if(input_key == ''):
                     data.update({key: value(self.message)})
@@ -30,7 +29,6 @@ class Cipher():
                     data.update({key: value(self.message, input_key)})
 
         self._toenglish(data, carrier="")
-        print(self.final)
         data.update({"english": self.final})
         self.final = None
         # e = json2html.convert(json=json.dumps(data))
