@@ -47,6 +47,13 @@ python app.py
 ![App Screenshot](decryto/../decrypto/static/screenshot.png)
 
   
+## Future Changes
+- Use a more robust vigenere breaker tool. 
+  - Detect key length with moving index and rotations using statistical techniques
+  - Apply brute force to keys with length less than 5
+  - This guarantees result for bigger english sentences.
+- Add Decimal to ASCII and Bacon Cipher
+
 
 ## LICENSE
 
