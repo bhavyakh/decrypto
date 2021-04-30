@@ -43,11 +43,12 @@ def _getCategory(dic):
         else:
             string = str(dic['cipher'])
             string = string.replace(' ', '')
+
             if(string.isalpha()):
                 category = 0
-            elif(string.isnumeric):
-                category = 1
-            else:
+            elif(string.isnumeric()):
                 category = 2
+            else:
+                category = 1
 
     return category

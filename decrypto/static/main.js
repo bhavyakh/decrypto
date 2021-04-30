@@ -27,7 +27,7 @@ async function submitForm(e, form) {
     setTimeout(() => btnSubmit.disabled = false, 4000);
 
     var moda = document.getElementById("myModal")
-    moda.modal("show");
+        //moda.modal("show");
 
     const jsonFormData = buildJsonFormData(form);
     myJSON = JSON.stringify(jsonFormData);
