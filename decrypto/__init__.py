@@ -1,6 +1,15 @@
 from flask import Flask, render_template, request
+from flask.helpers import get_debug_flag
 from .ciphers import Cipher
+from .config import DevConfig, ProdConfig
 app = Flask(__name__)
+
+# If using developement configuration
+if get_debug_flag():
+    app.config.from_object(DevConfig)
+# Using a production configuration
+else:
+    app.config.from_object(ProdConfig)
 
 
 @app.route("/")

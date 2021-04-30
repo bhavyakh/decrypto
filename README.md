@@ -37,8 +37,14 @@ pip install -r requirements.txt
 
 ## Installation
 
+Add `FLASK_APP` and `FLASK_DEBUG` environment variables
 ```sh
-python app.py
+export FLASK_APP=/path/to/app.py
+export FLASK_DEBUG=1
+```
+Run Using
+```sh
+flask run
 ```
 
 
