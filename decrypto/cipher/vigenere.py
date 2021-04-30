@@ -1,3 +1,6 @@
+from decrypto.cipher.vigcep import _decryptMessage
+
+
 class Vigenere:
 
     # Generate key matching to length of the message
@@ -9,15 +12,6 @@ class Vigenere:
             for i in range(len(string) - len(key)):
                 key.append(key[i % len(key)])
         return("" . join(key))
-
-    # Decryption Method
-    def _decryption(encrypt_text, key):
-        orig_text = []
-        for i in range(len(encrypt_text)):
-            x = (ord(encrypt_text[i]) - ord(key[i]) + 26) % 26
-            x += ord('A')
-            orig_text.append(chr(x))
-        return("" . join(orig_text))
 
     @classmethod
     def decrypt(cls, message, key):
@@ -39,6 +33,6 @@ class Vigenere:
         key = key.lower()
 
         key = cls._generateKey(message, key)
-        output = cls._decryption(message, key)
+        output = _decryptMessage(key, message)
 
         return {"Vigenere": output}
